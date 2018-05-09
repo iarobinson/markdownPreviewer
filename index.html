@@ -8,10 +8,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <!-- React Stuff -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  
+  <script type="text/babel">
+  class Greeting extends React.Component {
+    render() {
+      return (<h1>Markdown Previewer</h1>);
+    }
+  }
+  
+  ReactDOM.render(
+    <Greeting />,
+    document.getElementById('root')
+  );
+  </script>
 </head>
 
 <body>
-  <h2>Hello World</h2>
+  <div id="root"></div>
+  <div class="container">
+    <div class="row">
+    <p>Practice your GitHub markup language skills.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of Two
+      </div>
+      <div class="col-sm">
+        Two of Two
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
