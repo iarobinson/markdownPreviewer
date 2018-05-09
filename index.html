@@ -1,19 +1,23 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+  <!-- HTML5 Convention -->
   <meta charset="utf-8"/>
+  <title>A Markdown Previewer: From Ian Robinson as part of Free Code Camp Ciriculum</title>
+
+  <!-- CSS styling specific to this webpage -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Bootstrap CDN and responsive meta tag -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Marked CDN connection and link to Marked JS script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.15/marked.js"></script>
   <script src="./js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  
-  <!-- React Stuff -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-  
+
+  <!-- React Script Here -->
   <script type="text/babel">
   class Greeting extends React.Component {
     render() {
@@ -29,12 +33,36 @@
 </head>
 
 <body>
-  <div id="root"></div>
-  <div class="container">
-    <div class="row">
-    <p>Practice your GitHub markup language skills.</p>
+  <header>
+    <center><h1>GitHub Markdown Previewer</h1></center>
+  </header>
+  <div class="containers">
+    
+    <!-- Input Container -->
+    <div class="container">
+      <div class="label">
+        <span>Input</span>
+        <button id="clear">Clear</button>
+      </div>
+      <textarea id="input"></textarea>
+    </div>
+    
+    <!-- Output Container -->
+    <div class="container">
+      <div class="label">
+        <span>Output</span>
+        <select id="outputType">
+          <option value="GitHub">GitHub Markdwon</option>
+          <option value="html">HTML</option>
+        </select>
+      </div>
+      <div id="preview" class="pane" style="display: block;"></div>
+      <textarea id="input"></textarea>
     </div>
   </div>
+  
+  <!-- React DOM Element -->
+  <!-- <div id="root"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm">
@@ -44,7 +72,27 @@
         Two of Two
       </div>
     </div>
-  </div>
+  </div> -->
+  
+  <!-- Marked Test Script and DOM Element -->
+  <!-- <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    document.getElementById('content').innerHTML =
+      marked('# Marked in the browser\n\nRendered by **marked**.');
+  </script> -->
+
+
+  <!-- React and Babel JavaScript CDN and test script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+
+  <!-- Bootstrap JS Code -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
