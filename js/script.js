@@ -41,6 +41,7 @@ var search = searchToObject();
 if ('text' in search) {
   $inputElem.value = search.text;
 } else {
+  console.log(search, "<- search");
   fetch('./initial.md')
     .then(function (res) { return res.text(); })
     .then(function (text) {
@@ -94,9 +95,10 @@ $clearElem.addEventListener('click', function () {
 function searchToObject() {
   // modified from https://stackoverflow.com/a/7090123/806777
   var pairs = location.search.slice(1).split('&');
+  console.log(location, " <- location");
   var obj = {};
 
-  for (var i = 0; i < pairs.length; i++) {
+  for (var i = 0; i < pairs.length; i += 1) {
     if (pairs[i] === '') {
       continue;
     }
@@ -105,7 +107,7 @@ function searchToObject() {
 
     obj[decodeURIComponent(pair.shift())] = decodeURIComponent(pair.join('='));
   }
-
+  console.log(obj, "<- obj");
   return obj;
 }
 
